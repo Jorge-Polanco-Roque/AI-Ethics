@@ -1,0 +1,48 @@
+# ============================================================
+# Fairness Pipeline Development Toolkit - Configuration File
+# ============================================================
+# This file defines the behavior of the end-to-end fairness
+# pipeline orchestrated by run_pipeline.py.
+# ============================================================
+
+# --- Dataset Configuration ---
+dataset:
+  name: "german_credit"
+  test_size: 0.3
+  random_state: 42
+
+# --- Sensitive Attribute ---
+sensitive_attribute: "sex"
+
+# --- Step 1: Baseline Measurement ---
+baseline:
+  metrics:
+    - "demographic_parity_difference"
+    - "equalized_odds_difference"
+  bootstrap_samples: 500
+  confidence_level: 0.95
+
+# --- Step 2a: Pre-processing Transformer ---
+preprocessing:
+  transformer: "DisparateImpactRemover"
+  params:
+    repair_level: 0.8
+
+# --- Step 2b: Fair Training Method ---
+training:
+  method: "ReductionsWrapper"
+  base_estimator: "LogisticRegression"
+  params:
+    constraint: "demographic_parity"
+    eps: 0.01
+
+# --- Step 3: Final Validation ---
+validation:
+  primary_fairness_metric: "demographic_parity_difference"
+  threshold: 0.10   # Pipeline PASSES if metric <= threshold
+  primary_performance_metric: "accuracy"
+
+# --- MLflow Configuration ---
+mlflow:
+  experiment_name: "fairness_pipeline_run"
+  tracking_uri: "mlruns"
