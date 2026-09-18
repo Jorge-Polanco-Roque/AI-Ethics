@@ -1,74 +1,57 @@
-# AI Ethics — Practical Fairness for Data Scientists
+<h1 align="center">AI Ethics — Practical Fairness for Data Scientists</h1>
 
-This repository contains the projects developed during the **AI Ethics Specialization** at Turing College. Each project corresponds to one of the program's modules and addresses distinct ethical challenges associated with the design, development, and deployment of artificial intelligence systems.
+<p align="center">
+  <strong>Translating abstract ethical principles into actionable, measurable fairness practices for machine learning systems.</strong>
+</p>
 
-## Objective
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.11+-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/MLflow-tracking-0194e2?logo=mlflow&logoColor=white" alt="MLflow">
+  <img src="https://img.shields.io/badge/scikit--learn-ML-f7931e?logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/tests-35_passing-2ea44f" alt="Tests">
+  <img src="https://img.shields.io/badge/Turing_College-specialization-6a5acd" alt="Turing College">
+</p>
 
-The primary goal is to **translate abstract ethical principles into actionable, measurable practices** for machine learning systems. Across the modules, this specialization builds a progression from conceptual auditing to production-ready fairness tooling:
+---
 
-- **Module 1**: How to *detect and measure* bias in AI systems.
-- **Module 2**: How to *intervene* at the data and model level to reduce bias.
-- **Module 3**: How to *implement* fairness at scale within an organization.
-- **Final Project**: How to *integrate* all of the above into a single, automated, reproducible pipeline.
+## Overview
 
-## Repository Structure
+Projects developed during the **AI Ethics Specialization** at Turing College. Each corresponds to
+one module and addresses a distinct challenge in the design, development, and deployment of AI
+systems. Together they build a progression from **conceptual auditing to production-ready fairness
+tooling** — the practical side of the accountability and governance questions I want to research.
 
-```
-AI-Ethics/
-├── Module_1/          Fairness Audit Framework
-├── Module_2/          Fairness Intervention Playbook
-├── Module_3/          Fairness Implementation Playbook
-└── Final_Project/     Fairness Pipeline Development Toolkit
-```
+## Modules
+
+| Module | Question | Deliverable |
+|---|---|---|
+| **1 — Audit** | Can we *detect and measure* bias? | Fairness Audit Framework |
+| **2 — Intervene** | Can we *reduce* bias? | Fairness Intervention Playbook |
+| **3 — Implement** | Can we *scale* fairness across an organization? | Fairness Implementation Playbook |
+| **Final** | Can we *integrate* it all? | Automated Fairness Pipeline |
 
 ### Module 1 — Fairness Audit Framework
-
-A comprehensive playbook for systematically evaluating AI systems for bias and fairness issues. Includes a glossary of fairness concepts, an executive summary for stakeholders, a technical audit report, and an implementation guide.
+A playbook for systematically evaluating AI systems for bias: a glossary of fairness concepts, an
+executive summary for stakeholders, a technical audit report, and an implementation guide.
 
 ### Module 2 — Fairness Intervention Playbook
-
-Integrates four fairness intervention approaches — causal analysis, pre-processing, in-processing, and post-processing — into a unified workflow. Covers integration strategies, case studies, validation frameworks, intersectional fairness, and adaptability guidelines.
+Unifies four intervention approaches — causal analysis, pre-processing, in-processing, and
+post-processing — with integration strategies, case studies, validation frameworks, intersectional
+fairness, and adaptability guidelines.
 
 ### Module 3 — Fairness Implementation Playbook
-
-An end-to-end methodology for deploying fairness systematically across AI systems and organizations. Designed for director-level stakeholders and cross-functional teams, it covers implementation, integration, case studies, validation, adaptability, and future iterations.
+An end-to-end methodology for deploying fairness across AI systems and organizations, aimed at
+director-level stakeholders and cross-functional teams.
 
 ### Final Project — Fairness Pipeline Development Toolkit
-
-The capstone deliverable: a **configuration-driven, automated fairness pipeline** that integrates the measurement, data engineering, and model training modules from the previous three modules into a single orchestrated system.
-
-Key components:
-- **`config.yml`** — Declarative configuration defining the entire fairness workflow
-- **`run_pipeline.py`** — Three-step orchestrator: Baseline Measurement, Transform & Train, Final Validation (PASS/FAIL)
-- **`demo.ipynb`** — Interactive demonstration notebook
-- **MLflow integration** — Full experiment traceability (metrics, model artifacts, configuration)
-- **35 automated tests** — Unit, functional, and end-to-end integration tests
-
-For full documentation, see [Final_Project/README.md](Final_Project/README.md).
-
-## Specialization Progression
-
-```mermaid
-graph LR
-    M1["Module 1<br/><b>Audit</b><br/><small>Can we detect bias?</small>"]
-    M2["Module 2<br/><b>Intervene</b><br/><small>Can we reduce bias?</small>"]
-    M3["Module 3<br/><b>Implement</b><br/><small>Can we scale fairness?</small>"]
-    FP["Final Project<br/><b>Integrate</b><br/><small>Can we automate it?</small>"]
-    M1 --> M2 --> M3 --> FP
-```
+A **configuration-driven, automated fairness pipeline** that integrates measurement, data
+engineering, and model training into a single orchestrated system:
+- **`config.yml`** — declarative definition of the entire workflow.
+- **`run_pipeline.py`** — three-step orchestrator: Baseline Measurement → Transform & Train → Final Validation (PASS/FAIL).
+- **`demo.ipynb`** — interactive demonstration.
+- **MLflow integration** — full experiment traceability (metrics, artifacts, configuration).
+- **35 automated tests** — unit, functional, and end-to-end.
 
 ## Tech Stack
 
-| Technology | Used in | Purpose |
-|-----------|---------|---------|
-| Python | Final Project | Core implementation language |
-| scikit-learn | Final Project | ML models, pipelines, calibration |
-| Fairlearn | Final Project | Constrained fairness optimization |
-| PyTorch | Final Project | Neural network fairness regularization |
-| MLflow | Final Project | Experiment tracking and artifact management |
-| Markdown + Mermaid | All modules | Documentation and architecture diagrams |
-
-## About
-
-**Program**: AI Ethics Specialization — Turing College
-**Focus**: Practical fairness for data scientists — bridging the gap between ethical principles and production ML systems.
+Python · scikit-learn · MLflow · pytest · Jupyter.
